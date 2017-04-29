@@ -4,8 +4,9 @@
 target 'Knock01' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for Knock01
+  pod 'Realm'
 
   target 'Knock01Tests' do
     inherit! :search_paths
