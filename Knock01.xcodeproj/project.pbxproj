@@ -11,6 +11,9 @@
 		5CF84924953D0C380F431C44 /* Pods_Knock01Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEBB4377DF8658D9488A2EB /* Pods_Knock01Tests.framework */; };
 		659D5D34A26308BD6480B437 /* Pods_Knock01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9B1840FBB3B24974E91F0AA /* Pods_Knock01.framework */; };
 		B0382BC11EB47AF1002CEEE1 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0382BC01EB47AF1002CEEE1 /* Realm.framework */; };
+		B067477A1EB5906A00D673A0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06747791EB5906A00D673A0 /* Item.swift */; };
+		B067477C1EB5929600D673A0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B067477B1EB5929600D673A0 /* RealmSwift.framework */; };
+		B067477E1EB7453B00D673A0 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = B067477D1EB7453B00D673A0 /* Object.swift */; };
 		B0D8EAD31EAF9C35004A7792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D8EAD21EAF9C35004A7792 /* AppDelegate.swift */; };
 		B0D8EAD51EAF9C35004A7792 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D8EAD41EAF9C35004A7792 /* ViewController.swift */; };
 		B0D8EAD81EAF9C35004A7792 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D8EAD61EAF9C35004A7792 /* Main.storyboard */; };
@@ -44,6 +47,9 @@
 		91E75EAE4AA8C958FA45D0DF /* Pods_Knock01UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Knock01UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B020842F036E078ACA503354 /* Pods-Knock01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Knock01.release.xcconfig"; path = "Pods/Target Support Files/Pods-Knock01/Pods-Knock01.release.xcconfig"; sourceTree = "<group>"; };
 		B0382BC01EB47AF1002CEEE1 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "Pods/../build/Debug-iphoneos/Realm/Realm.framework"; sourceTree = "<group>"; };
+		B06747791EB5906A00D673A0 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		B067477B1EB5929600D673A0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/Knock01-dkdvtopcafxfrpbkkmktifxyqkjy/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
+		B067477D1EB7453B00D673A0 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		B0D8EACF1EAF9C35004A7792 /* Knock01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Knock01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D8EAD21EAF9C35004A7792 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D8EAD41EAF9C35004A7792 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B067477C1EB5929600D673A0 /* RealmSwift.framework in Frameworks */,
 				B0382BC11EB47AF1002CEEE1 /* Realm.framework in Frameworks */,
 				659D5D34A26308BD6480B437 /* Pods_Knock01.framework in Frameworks */,
 			);
@@ -92,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B06747781EB58FC100D673A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B06747791EB5906A00D673A0 /* Item.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		B0D8EAC61EAF9C34004A7792 = {
 			isa = PBXGroup;
 			children = (
@@ -118,11 +133,13 @@
 			isa = PBXGroup;
 			children = (
 				B0D8EAD21EAF9C35004A7792 /* AppDelegate.swift */,
+				B06747781EB58FC100D673A0 /* Models */,
 				B0D8EAD41EAF9C35004A7792 /* ViewController.swift */,
 				B0D8EAD61EAF9C35004A7792 /* Main.storyboard */,
 				B0D8EAD91EAF9C35004A7792 /* Assets.xcassets */,
 				B0D8EADB1EAF9C35004A7792 /* LaunchScreen.storyboard */,
 				B0D8EADE1EAF9C35004A7792 /* Info.plist */,
+				B067477D1EB7453B00D673A0 /* Object.swift */,
 			);
 			path = Knock01;
 			sourceTree = "<group>";
@@ -148,6 +165,7 @@
 		B5C5A7D9054C6184D043D09D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B067477B1EB5929600D673A0 /* RealmSwift.framework */,
 				B0382BC01EB47AF1002CEEE1 /* Realm.framework */,
 				F9B1840FBB3B24974E91F0AA /* Pods_Knock01.framework */,
 				7DEBB4377DF8658D9488A2EB /* Pods_Knock01Tests.framework */,
@@ -451,6 +469,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0D8EAD51EAF9C35004A7792 /* ViewController.swift in Sources */,
+				B067477A1EB5906A00D673A0 /* Item.swift in Sources */,
+				B067477E1EB7453B00D673A0 /* Object.swift in Sources */,
 				B0D8EAD31EAF9C35004A7792 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
