@@ -14,7 +14,8 @@
 		B067477A1EB5906A00D673A0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06747791EB5906A00D673A0 /* Item.swift */; };
 		B067477C1EB5929600D673A0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B067477B1EB5929600D673A0 /* RealmSwift.framework */; };
 		B067477E1EB7453B00D673A0 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = B067477D1EB7453B00D673A0 /* Object.swift */; };
-		B06747821EBA364A00D673A0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06747811EBA364A00D673A0 /* TableViewController.swift */; };
+		B06747841EBD667400D673A0 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06747831EBD667400D673A0 /* RealmHelper.swift */; };
+		B06747861EBF1CEB00D673A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06747851EBF1CEB00D673A0 /* ViewController.swift */; };
 		B0D8EAD31EAF9C35004A7792 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D8EAD21EAF9C35004A7792 /* AppDelegate.swift */; };
 		B0D8EAD81EAF9C35004A7792 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D8EAD61EAF9C35004A7792 /* Main.storyboard */; };
 		B0D8EADA1EAF9C35004A7792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D8EAD91EAF9C35004A7792 /* Assets.xcassets */; };
@@ -50,7 +51,8 @@
 		B06747791EB5906A00D673A0 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B067477B1EB5929600D673A0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../Library/Developer/Xcode/DerivedData/Knock01-dkdvtopcafxfrpbkkmktifxyqkjy/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		B067477D1EB7453B00D673A0 /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
-		B06747811EBA364A00D673A0 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		B06747831EBD667400D673A0 /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		B06747851EBF1CEB00D673A0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B0D8EACF1EAF9C35004A7792 /* Knock01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Knock01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D8EAD21EAF9C35004A7792 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0D8EAD71EAF9C35004A7792 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,11 +137,12 @@
 				B0D8EAD21EAF9C35004A7792 /* AppDelegate.swift */,
 				B06747781EB58FC100D673A0 /* Models */,
 				B0D8EAD61EAF9C35004A7792 /* Main.storyboard */,
+				B06747851EBF1CEB00D673A0 /* ViewController.swift */,
 				B0D8EAD91EAF9C35004A7792 /* Assets.xcassets */,
 				B0D8EADB1EAF9C35004A7792 /* LaunchScreen.storyboard */,
 				B0D8EADE1EAF9C35004A7792 /* Info.plist */,
 				B067477D1EB7453B00D673A0 /* Object.swift */,
-				B06747811EBA364A00D673A0 /* TableViewController.swift */,
+				B06747831EBD667400D673A0 /* RealmHelper.swift */,
 			);
 			path = Knock01;
 			sourceTree = "<group>";
@@ -468,9 +471,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B06747861EBF1CEB00D673A0 /* ViewController.swift in Sources */,
 				B067477A1EB5906A00D673A0 /* Item.swift in Sources */,
+				B06747841EBD667400D673A0 /* RealmHelper.swift in Sources */,
 				B067477E1EB7453B00D673A0 /* Object.swift in Sources */,
-				B06747821EBA364A00D673A0 /* TableViewController.swift in Sources */,
 				B0D8EAD31EAF9C35004A7792 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
