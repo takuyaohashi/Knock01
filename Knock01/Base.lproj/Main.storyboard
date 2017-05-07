@@ -20,12 +20,28 @@
                     <view key="view" contentMode="scaleToFill" id="G4i-UV-P6Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hVP-o9-9er">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Tni-Po-B2N" id="FZw-EM-IXW"/>
+                                    <outlet property="delegate" destination="Tni-Po-B2N" id="4U1-AG-1u9"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mgt-nB-jwO" firstAttribute="top" secondItem="hVP-o9-9er" secondAttribute="bottom" id="Pc9-df-1AV"/>
+                            <constraint firstAttribute="trailing" secondItem="hVP-o9-9er" secondAttribute="trailing" id="Sws-4L-fae"/>
+                            <constraint firstItem="hVP-o9-9er" firstAttribute="leading" secondItem="G4i-UV-P6Y" secondAttribute="leading" id="e3F-uY-xtH"/>
+                            <constraint firstItem="hVP-o9-9er" firstAttribute="top" secondItem="nkQ-T9-BVt" secondAttribute="bottom" id="xpZ-AW-0Nz"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZz-jV-eSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="758"/>
+            <point key="canvasLocation" x="384.80000000000001" y="757.87106446776613"/>
         </scene>
     </scenes>
 </document>
