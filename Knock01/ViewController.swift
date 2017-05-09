@@ -19,7 +19,10 @@ class ViewController: UIViewController {
     }
 
     func action(sender:UIButton) {
-        print("rightBarButtonItem is added");
+        print("rightBarButtonItem is added")
+        
+        let addView = AddItemViewController()
+        navigationController?.pushViewController(addView as UIViewController, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
