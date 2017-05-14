@@ -13,16 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "ToDo List"
-        
-        self.navigationItem.rightBarButtonItem =
-            UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.action(sender:)))
-    }
-
-    func action(sender:UIButton) {
-        print("rightBarButtonItem is added")
-        
-        let addView = AddItemViewController()
-        navigationController?.pushViewController(addView as UIViewController, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
