@@ -10,6 +10,9 @@ import UIKit
 
 class AddItemViewController: UIViewController {
 
+    @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var addButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
