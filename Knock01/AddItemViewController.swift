@@ -12,6 +12,7 @@ class AddItemViewController: UIViewController {
 
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,15 @@ class AddItemViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    func validate() -> Bool {
+        return false
+    }
     
     @IBAction func addTodoItem(_ sender: Any) {
+        guard validate() else {
+            return;
+        }
         navigationController?.popViewController(animated: true)
     }
 
