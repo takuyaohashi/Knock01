@@ -10,7 +10,11 @@ import UIKit
 
 class AddItemViewController: UIViewController {
 
-    @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var titleText: UITextField! {
+        didSet {
+            titleText.delegate = self
+        }
+    }
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     
@@ -18,6 +22,8 @@ class AddItemViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
+        
+        addButton.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,4 +52,25 @@ class AddItemViewController: UIViewController {
     }
     */
 
+}
+
+extension AddItemViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleText.resignFirstResponder()
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        addButton.isEnabled = true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+
+    }
 }
