@@ -13,6 +13,7 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var titleText: UITextField! {
         didSet {
             titleText.delegate = self
+            titleText.returnKeyType = .done
         }
     }
     @IBOutlet weak var addButton: UIButton!
