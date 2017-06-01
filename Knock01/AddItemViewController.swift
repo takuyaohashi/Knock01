@@ -24,7 +24,15 @@ class AddItemViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(textFieldDidChange),
+                                               name: NSNotification.Name.UITextFieldTextDidChange,
+                                               object: titleText)
         addButton.isEnabled = false
+    }
+
+    func textFieldDidChange(notification: NSNotification) {
+        print("textFieldDidChange")
     }
 
     override func didReceiveMemoryWarning() {
