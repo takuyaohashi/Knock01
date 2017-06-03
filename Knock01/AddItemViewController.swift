@@ -23,16 +23,7 @@ class AddItemViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(textFieldDidChange),
-                                               name: NSNotification.Name.UITextFieldTextDidChange,
-                                               object: titleText)
         addButton.isEnabled = false
-    }
-
-    func textFieldDidChange(notification: NSNotification) {
-        print("textFieldDidChange")
     }
 
     override func didReceiveMemoryWarning() {
@@ -81,5 +72,15 @@ extension AddItemViewController: UITextFieldDelegate {
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
 
+    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print("did change delegate")
+        let maxLength: Int = 15
+        let str = textField.text! + string
+        if str.characters.count < maxLength {
+            return true
+        } else {
+            return false;
+        }
     }
 }
