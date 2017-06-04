@@ -31,8 +31,13 @@ class AddItemViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    /* 本当はもっとみたほうがいいけど、とりあえず */
     func validate() -> Bool {
-        return false
+        if titleText.text!.characters.count != 0 {
+            return true
+        } else {
+            return false
+        }
     }
     
     @IBAction func addTodoItem(_ sender: Any) {
