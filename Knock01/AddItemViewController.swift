@@ -19,6 +19,7 @@ class AddItemViewController: UIViewController {
     }
     @IBOutlet weak var dateText: UITextField!
     @IBOutlet weak var addButton: UIButton!
+    var deadLine = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,7 @@ class AddItemViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat  = "yyyy/MM/dd";
         dateText.text = dateFormatter.string(from: sender.date)
+        deadLine = sender.date
     }
 
     /*
