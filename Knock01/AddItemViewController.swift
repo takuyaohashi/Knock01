@@ -13,15 +13,17 @@ class AddItemViewController: UIViewController {
     @IBOutlet weak var titleText: UITextField! {
         didSet {
             titleText.delegate = self
+
             titleText.returnKeyType = .done
         }
     }
+    @IBOutlet weak var dateText: UITextField!
     @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+
         // Do any additional setup after loading the view.
         addButton.isEnabled = false
     }
@@ -45,6 +47,19 @@ class AddItemViewController: UIViewController {
             return;
         }
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func selectDate(_ sender: UITextField) {
+        let datePickerView = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: #selector(datePickerValueChanged), for: UIControlEvents.valueChanged)
+    }
+    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat  = "yyyy/MM/dd";
+        dateText.text = dateFormatter.string(from: sender.date)
     }
 
     /*
