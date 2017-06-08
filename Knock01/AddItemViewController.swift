@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AddItemViewController: UIViewController {
 
@@ -47,6 +48,13 @@ class AddItemViewController: UIViewController {
         guard validate() else {
             return;
         }
+        let item = Item()
+        item.title = titleText.text!
+        item.desc = nil
+        item.date = deadLine
+        item.done = false
+        item.add()
+        
         navigationController?.popViewController(animated: true)
     }
     

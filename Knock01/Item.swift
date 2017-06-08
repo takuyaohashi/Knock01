@@ -10,6 +10,6 @@ import RealmSwift
 class Item: Object {
     dynamic var title = ""
     dynamic var desc: String? = nil
-    dynamic var date = NSDate()
+    dynamic var date = Date()
     dynamic var done = false
 }
