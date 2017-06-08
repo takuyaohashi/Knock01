@@ -96,7 +96,6 @@ extension AddItemViewController: UITextFieldDelegate {
 
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print("did change delegate")
         let maxLength: Int = 15
         let str = textField.text! + string
         if str.characters.count < maxLength {
