@@ -11,6 +11,6 @@ import RealmSwift
 class RealmHelper {
     static func objects<T: Object>(type: T.Type) -> Results<T>? {
         let realm = try? Realm()
-        return realm?.objects(type)
+        return realm?.objects(T)
     }
 }

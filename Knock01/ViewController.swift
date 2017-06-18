@@ -11,6 +11,8 @@ import RealmSwift
 
 class ViewController: UIViewController {
 
+    var todolist = RealmHelper.objects(type: Item.self)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "ToDo List"
@@ -37,13 +39,17 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = try? Realm()
-        let items = realm?.objects(Item).filter("done == false")
-        
-        return items!.count
+        if let items = realm?.objects(Item.self).filter("done == false") {
+            return items.count
+        }
+    
+        return 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "myCell")
-        cell.textLabel?.text = "\(indexPath.row) raw"
+        if let todoitem = todolist?.first {
+            cell.textLabel?.text = "\(todoitem.title)"
+        }
         return cell
     }
     
