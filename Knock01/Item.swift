@@ -11,8 +11,6 @@ class Item: Object {
     dynamic var id = ""
     dynamic var title = ""
     dynamic var desc: String? = nil
-    dynamic var date = Date()
-    dynamic var done = false
 
     override class func primaryKey() -> String {
         return "id"
