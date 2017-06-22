@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 class ViewController: UIViewController {
-
+    var items = List<Item>()
     var todolist = RealmHelper.objects(type: Item.self)
     
     override func viewDidLoad() {
@@ -38,18 +38,13 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let realm = try? Realm()
-        if let items = realm?.objects(Item.self).filter("done == false") {
-            return items.count
-        }
-    
-        return 0
+        return items.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "myCell")
-        if let todoitem = todolist?.first {
-            cell.textLabel?.text = "\(todoitem.title)"
-        }
+        let item = items[indexPath.row]
+        cell.textLabel?.text = item.title
+        cell.textLabel?.alpha = item.done ? 0.5 : 1
         return cell
     }
     
