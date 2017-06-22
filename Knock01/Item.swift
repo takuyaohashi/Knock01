@@ -7,12 +7,16 @@
 //
 import RealmSwift
 
-class Item: Object {
+class ItemList: Object {
     dynamic var id = ""
-    dynamic var title = ""
-    dynamic var desc: String? = nil
+    let items = List<Item>()
 
     override class func primaryKey() -> String {
         return "id"
     }
+}
+
+class Item: Object {
+    dynamic var title = ""
+    dynamic var done = false
 }

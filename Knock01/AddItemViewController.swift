@@ -50,7 +50,7 @@ class AddItemViewController: UIViewController {
         }
         let item = Item()
         item.title = titleText.text!
-        item.desc = nil
+        item.done = false
         item.add()
         
         navigationController?.popViewController(animated: true)
