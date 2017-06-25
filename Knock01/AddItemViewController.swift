@@ -10,6 +10,9 @@ import UIKit
 import RealmSwift
 
 class AddItemViewController: UIViewController {
+    
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+
 
     @IBOutlet weak var titleText: UITextField! {
         didSet {
@@ -26,6 +29,8 @@ class AddItemViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
 
+        delegate.item = nil
+        
         // Do any additional setup after loading the view.
         addButton.isEnabled = false
     }
@@ -51,7 +56,8 @@ class AddItemViewController: UIViewController {
         let item = Item()
         item.title = titleText.text!
         item.done = false
-        item.add()
+        
+        delegate.item = item
         
         navigationController?.popViewController(animated: true)
     }

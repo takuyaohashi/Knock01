@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     var notificationToken: NotificationToken!
     var realm: Realm!
     var items = List<Item>()
+    
+    let delegate = UIApplication.shared.delegate as! AppDelegate
+    
+    let username = "hoge@example.com"
+    let password = "hogehoge"
 
     @IBOutlet weak var tableView: UITableView!
     var todolist = RealmHelper.objects(type: Item.self)
@@ -21,8 +26,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "ToDo List"
-        let username = "hoge@example.com"
-        let password = "hogehoge"
 
         SyncUser.logIn(with: .usernamePassword(username: username, password: password), server: URL(string: "http://127.0.0.1:9080")!) { user, error in
             guard let user = user else {
@@ -49,6 +52,15 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let item = self.delegate.item {
+            try! self.realm.write {
+                self.items.append(item)
+            }
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
