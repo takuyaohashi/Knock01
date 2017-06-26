@@ -1,4 +1,5 @@
 language: objective-c
 xcode_project: Knock01.xcodeproj
+podfile: ./Podfile
 osx_image: xcode8.3
 
