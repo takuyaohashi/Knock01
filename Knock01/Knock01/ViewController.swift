@@ -27,7 +27,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "ToDo List"
 
-        SyncUser.logIn(with: .usernamePassword(username: username, password: password), server: URL(string: "http://127.0.0.1:9080")!) { user, error in
+        SyncUser.logIn(with: .usernamePassword(username: username, password: password),
+                       server: URL(string: "http://127.0.0.1:9080")!) { user, error in
             guard let user = user else {
                 fatalError(String(describing: error))
             }
@@ -59,6 +60,7 @@ class ViewController: UIViewController {
             try! self.realm.write {
                 self.items.append(item)
             }
+            self.delegate.item = nil
         }
         
     }
