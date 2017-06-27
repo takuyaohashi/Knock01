@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="jwb-I7-KC9">
             <objects>
-                <viewController id="Tni-Po-B2N" customClass="ViewController" customModule="Knock01" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Tni-Po-B2N" customClass="ViewController" customModule="Knock01" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nkQ-T9-BVt"/>
                         <viewControllerLayoutGuide type="bottom" id="Mgt-nB-jwO"/>
