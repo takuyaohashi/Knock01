@@ -12,26 +12,19 @@ import RealmSwift
 class AddItemViewController: UIViewController {
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
-
+    @IBOutlet weak var addButton: UIButton!
 
     @IBOutlet weak var titleText: UITextField! {
         didSet {
             titleText.delegate = self
-
             titleText.returnKeyType = .done
         }
     }
-    @IBOutlet weak var dateText: UITextField!
-    @IBOutlet weak var addButton: UIButton!
-    var deadLine = Date()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
-
         delegate.item = nil
-        
-        // Do any additional setup after loading the view.
         addButton.isEnabled = false
     }
 
@@ -56,26 +49,13 @@ class AddItemViewController: UIViewController {
         let item = Item()
         item.title = titleText.text!
         item.done = false
-        
+
+        /* ViewController に送るため */
         delegate.item = item
         
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func selectDate(_ sender: UITextField) {
-        let datePickerView = UIDatePicker()
-        datePickerView.datePickerMode = UIDatePickerMode.date
-        sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(datePickerValueChanged), for: UIControlEvents.valueChanged)
-    }
-    
-    func datePickerValueChanged(sender:UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat  = "yyyy/MM/dd";
-        dateText.text = dateFormatter.string(from: sender.date)
-        deadLine = sender.date
-    }
-
     /*
     // MARK: - Navigation
 
