@@ -1,9 +1,8 @@
-# iOS APP Knock01
+# iOS アプリn本ノック
 
-iOS アプリN本ノック 1本目
+## 概要
 
-## 内容
-定番の TODO アプリ
+iOS アプリを作る上で必要な勉強を行うためのリポジトリ
 
-## 使う技術
-Realm
+## 各ノックの紹介
+* [1本目 TODO アプリ](https://github.com/takuyaohashi/Knock_iOS_app/tree/master/Knock01)
