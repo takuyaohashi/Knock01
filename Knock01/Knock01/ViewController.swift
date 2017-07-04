@@ -101,18 +101,34 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.alpha = item.done ? 0.5 : 1
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(indexPath.row) is tapped")
-    }
 
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            try! realm.write {
-                let item = items[indexPath.row]
-                realm.delete(item)
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .normal, title: "Delete") { (action, index) -> Void in
+            try! self.realm.write {
+                let item = self.items[indexPath.row]
+                self.realm.delete(item)
             }
         }
+        deleteButton.backgroundColor = UIColor.red
+        
+        let doneButton = UITableViewRowAction(style: .normal, title: "Done") { (action, index) -> Void in
+            let item = self.items[indexPath.row]
+            try! self.realm?.write {
+                item.done = !item.done
+                let destinationIndexPath: IndexPath
+                if item.done {
+                    // move cell to bottom
+                    destinationIndexPath = IndexPath(row: self.items.count - 1, section: 0)
+                } else {
+                    // move cell just above the first completed item
+                    let completedCount = self.items.filter("done = true").count
+                    destinationIndexPath = IndexPath(row: self.items.count - completedCount - 1, section: 0)
+                }
+                self.items.move(from: indexPath.row, to: destinationIndexPath.row)
+            }
+        }
+        doneButton.backgroundColor = UIColor.blue
+        return [deleteButton, doneButton]
     }
 
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
