@@ -17,40 +17,36 @@ class ViewController: UIViewController {
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
     
-    let username = "hoge@example.com"
-    let password = "hogehoge"
-
     @IBOutlet weak var tableView: UITableView!
     var todolist = RealmHelper.objects(type: Item.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "ToDo List"
+        
+        DispatchQueue.main.async {
+            self.realm = try! Realm()
 
-        SyncUser.logIn(with: .usernamePassword(username: username, password: password),
-                       server: URL(string: "http://127.0.0.1:9080")!) { user, error in
-            guard let user = user else {
-                fatalError(String(describing: error))
+            // リストを保持するためのオブジェクトを追加しておく
+            if self.realm.objects(ItemList.self).first == nil {
+                let list = ItemList()
+                try! self.realm.write {
+                    self.realm.add(list)
+                }
             }
-            DispatchQueue.main.async {
-                let configuration = Realm.Configuration(
-                    syncConfiguration: SyncConfiguration(user: user, realmURL: URL(string: "realm://127.0.0.1:9080/~/realmtasks")!)
-                )
-                self.realm = try! Realm(configuration: configuration)
+            if self.items.realm == nil, let list = self.realm.objects(ItemList.self).first {
+                self.items = list.items
+            }
+            
+            // Show initial tasks
+            func updateList() {
+                self.tableView.reloadData()
+            }
+            updateList()
 
-                // Show initial tasks
-                func updateList() {
-                    if self.items.realm == nil, let list = self.realm.objects(ItemList.self).first {
-                        self.items = list.items
-                    }
-                    self.tableView.reloadData()
-                }
+            // Notify us when Realm changes
+            self.notificationToken = self.realm.addNotificationBlock { _ in
                 updateList()
-
-                // Notify us when Realm changes
-                self.notificationToken = self.realm.addNotificationBlock { _ in
-                    updateList()
-                }
             }
         }
     }
