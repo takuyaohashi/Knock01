@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "ToDo List"
         
+        self.navigationItem.leftBarButtonItem = editButtonItem
+        
         DispatchQueue.main.async {
             self.realm = try! Realm()
 
@@ -66,6 +68,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.isEditing = editing
+    }
+    
     deinit {
         self.notificationToken.stop()
     }
@@ -105,6 +112,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 let item = items[indexPath.row]
                 realm.delete(item)
             }
+        }
+    }
+
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        try! realm.write {
+            items.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
         }
     }
 }
