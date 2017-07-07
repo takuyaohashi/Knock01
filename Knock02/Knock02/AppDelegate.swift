@@ -20,8 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.white
 
-        // rootViewController を設定して、window を表示する
-        window?.rootViewController = ViewController()
+        // navigationController を設定して、window を表示する
+        let navigationController = UINavigationController(rootViewController: ViewController())
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         return true
     }
