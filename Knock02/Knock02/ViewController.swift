@@ -12,11 +12,17 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
+                                                            target: self, action: #selector(addItem))
+    }
+    
+    func addItem() {
+        let addItemViewController = AddItemViewController()
+        // 自身を保持してる navigationController を使用する
+        navigationController?.pushViewController(addItemViewController, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
