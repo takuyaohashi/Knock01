@@ -8,16 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    private var tableView: UITableView!
+class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // 画面いっぱいの tableView の生成
-        tableView = UITableView(frame: UIScreen.main.bounds)
-
-        self.view.addSubview(tableView)
     }
 
     override func didReceiveMemoryWarning() {
