@@ -7,16 +7,24 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 class ViewController: UITableViewController {
 
+    var realm: Realm!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "ToDo List"
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
                                                             target: self, action: #selector(addItem))
+        setupRealm()
+    }
+    
+    func setupRealm() {
+        realm = try! Realm()
+        
     }
     
     func addItem() {
@@ -31,7 +39,6 @@ class ViewController: UITableViewController {
 
     // 行の数を返す
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("section is \(section)")
         return 0
     }
 
