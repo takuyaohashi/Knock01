@@ -16,6 +16,7 @@ class AddItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createTitleText()
+        createAddButton()
     }
 
     func createTitleText() {
@@ -74,6 +75,59 @@ class AddItemViewController: UIViewController {
                                constant: 0)
             ]
         )
+    }
+
+    func createAddButton() {
+        addButton = UIButton(type: UIButtonType.system)
+        addButton.setTitle("add", for: .normal)
+
+        // click された時のアクションを追加
+        addButton.addTarget(self, action: #selector(addItem), for: .touchUpInside)
+
+        self.view.addSubview(addButton)
+
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+
+        view.addConstraints([
+            // titletext の下 60px に配置
+            NSLayoutConstraint(item: addButton,
+                               attribute: .top,
+                               relatedBy: .equal,
+                               toItem: self.titleField,
+                               attribute: .bottom,
+                               multiplier: 1.0,
+                               constant: 30),
+
+            // 高さを 30px に固定
+            NSLayoutConstraint(item: addButton,
+                               attribute: .height,
+                               relatedBy: .equal,
+                               toItem: nil,
+                               attribute: .height,
+                               multiplier: 1.0,
+                               constant: 30),
+
+            // 幅を 300px に固定
+            NSLayoutConstraint(item: addButton,
+                               attribute: .width,
+                               relatedBy: .equal,
+                               toItem: nil,
+                               attribute: .width,
+                               multiplier: 1.0,
+                               constant: 300),
+
+            // センターに配置
+            NSLayoutConstraint(item: addButton,
+                               attribute: .centerX,
+                               relatedBy: .equal,
+                               toItem: view,
+                               attribute: .centerX,
+                               multiplier: 1.0,
+                               constant: 0)
+            ])
+    }
+    func addItem() {
+        print("clocked")
     }
 
     override func didReceiveMemoryWarning() {
