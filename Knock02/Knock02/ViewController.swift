@@ -22,6 +22,8 @@ class ViewController: UITableViewController {
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
                                                             target: self, action: #selector(addItem))
+        self.navigationItem.leftBarButtonItem = editButtonItem
+        
         setupRealm()
     }
     
@@ -80,5 +82,24 @@ class ViewController: UITableViewController {
         cell.textLabel?.text = item.title
         cell.textLabel?.alpha = item.done ? 0.5 : 1
         return cell
+    }
+    
+    // 削除するため
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .normal, title: "Delete") { (action, index) -> Void in
+            try! self.realm.write {
+                let item = self.items[indexPath.row]
+                self.realm.delete(item)
+            }
+        }
+        deleteButton.backgroundColor = UIColor.red
+        return [deleteButton]
+    }
+    
+    // 入れ替える
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        try! realm.write {
+            items.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
+        }
     }
 }
