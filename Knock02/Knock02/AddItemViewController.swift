@@ -78,6 +78,8 @@ class AddItemViewController: UIViewController {
                                constant: 0)
             ]
         )
+        // textField 修正時のため
+        titleField.delegate = self
     }
 
     func createAddButton() {
@@ -144,5 +146,13 @@ class AddItemViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension AddItemViewController: UITextFieldDelegate {
+    // return を押したときにキーボードを隠す
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        titleField.resignFirstResponder()
+        return true
     }
 }
