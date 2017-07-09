@@ -10,11 +10,14 @@ import UIKit
 
 class AddItemViewController: UIViewController {
 
+    let delegate = UIApplication.shared.delegate as! AppDelegate
     var titleField: UITextField!
     var addButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "add new ToDo Item"
+        delegate.todoItem = nil
         createTitleText()
         createAddButton()
     }
@@ -127,7 +130,16 @@ class AddItemViewController: UIViewController {
             ])
     }
     func addItem() {
-        print("clocked")
+        guard let title = titleField.text else {
+            return
+        }
+        let item = TodoItem()
+        item.title = title
+        item.done = false
+
+        delegate.todoItem = item
+
+        navigationController?.popViewController(animated: true)
     }
 
     override func didReceiveMemoryWarning() {

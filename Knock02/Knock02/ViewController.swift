@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 class ViewController: UITableViewController {
+    let delegate = UIApplication.shared.delegate as! AppDelegate
     var notificationToken: NotificationToken!
     var realm: Realm!
     var items = List<TodoItem>()
@@ -17,6 +18,7 @@ class ViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "ToDo List"
+        delegate.todoItem = nil
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose,
                                                             target: self, action: #selector(addItem))
@@ -51,6 +53,15 @@ class ViewController: UITableViewController {
         let addItemViewController = AddItemViewController()
         // 自身を保持してる navigationController を使用する
         navigationController?.pushViewController(addItemViewController, animated: true)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        if let item = self.delegate.todoItem {
+            try! self.realm.write {
+                self.items.append(item)
+            }
+            self.delegate.todoItem = nil
+        }
     }
 
     override func didReceiveMemoryWarning() {
