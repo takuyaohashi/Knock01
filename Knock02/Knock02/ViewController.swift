@@ -102,4 +102,22 @@ class ViewController: UITableViewController {
             items.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
         }
     }
+
+    // tap したら done にするように修正
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = self.items[indexPath.row]
+        try! self.realm?.write {
+            item.done = !item.done
+            let destinationIndexPath: IndexPath
+            if item.done {
+                // move cell to bottom
+                destinationIndexPath = IndexPath(row: self.items.count - 1, section: 0)
+            } else {
+                // move cell just above the first completed item
+                let completedCount = self.items.filter("done = true").count
+                destinationIndexPath = IndexPath(row: self.items.count - completedCount - 1, section: 0)
+            }
+            self.items.move(from: indexPath.row, to: destinationIndexPath.row)
+        }
+    }
 }
