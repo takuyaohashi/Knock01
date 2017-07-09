@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UITableViewController {
 
     override func viewDidLoad() {
@@ -26,5 +27,17 @@ class ViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    // 行の数を返す
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("section is \(section)")
+        return 0
+    }
+
+    // デフォルトの　cell を返す
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "myCell")
+        return cell
     }
 }
