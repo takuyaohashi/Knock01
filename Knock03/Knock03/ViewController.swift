@@ -54,6 +54,8 @@ class ViewController: UIViewController {
                                constant: 0),
             
         ]);
+        
+        calendarView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,9 +64,14 @@ class ViewController: UIViewController {
     }
 }
 
-//
-//extension ViewController: UICollectionViewDataSource {
 
-    
+extension ViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
 
-//}
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        return cell
+    }
+}
