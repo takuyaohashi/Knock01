@@ -11,6 +11,7 @@
 		B08734731F150CB500C61AFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08734721F150CB500C61AFB /* ViewController.swift */; };
 		B08734781F150CB500C61AFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B08734771F150CB500C61AFB /* Assets.xcassets */; };
 		B087347B1F150CB500C61AFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B08734791F150CB500C61AFB /* LaunchScreen.storyboard */; };
+		B08734831F1B2D9E00C61AFB /* CalendarDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08734821F1B2D9E00C61AFB /* CalendarDateCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		B08734771F150CB500C61AFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B087347A1F150CB500C61AFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B087347C1F150CB500C61AFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B08734821F1B2D9E00C61AFB /* CalendarDateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDateCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				B08734771F150CB500C61AFB /* Assets.xcassets */,
 				B08734791F150CB500C61AFB /* LaunchScreen.storyboard */,
 				B087347C1F150CB500C61AFB /* Info.plist */,
+				B08734821F1B2D9E00C61AFB /* CalendarDateCell.swift */,
 			);
 			path = Knock03;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B08734731F150CB500C61AFB /* ViewController.swift in Sources */,
+				B08734831F1B2D9E00C61AFB /* CalendarDateCell.swift in Sources */,
 				B08734711F150CB500C61AFB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
