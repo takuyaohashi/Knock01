@@ -20,9 +20,15 @@ class ViewController: UIViewController {
     }
     
     func createCalendar() {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 30, height: 20)
+        layout.sectionInset = UIEdgeInsetsMake(0,0,0,0)
+        layout.minimumLineSpacing = 30
+
         calendarView = UICollectionView(frame: UIScreen.main.nativeBounds,
-                                        collectionViewLayout: UICollectionViewLayout())
+                                        collectionViewLayout: layout)
         calendarView.backgroundColor = UIColor.lightGray
+        calendarView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         self.view.addSubview(calendarView)
         
         calendarView.translatesAutoresizingMaskIntoConstraints = false
