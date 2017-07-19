@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         layout.sectionInset = UIEdgeInsetsMake(0,0,0,0)
         layout.minimumLineSpacing = 30
 
-        calendarView = UICollectionView(frame: UIScreen.main.nativeBounds,
+        calendarView = UICollectionView(frame: self.view.frame,
                                         collectionViewLayout: layout)
         calendarView.backgroundColor = UIColor.lightGray
         calendarView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
