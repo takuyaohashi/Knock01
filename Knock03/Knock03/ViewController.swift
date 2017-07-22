@@ -11,14 +11,14 @@ import UIKit
 class ViewController: UIViewController {
 
     var calendarView : UICollectionView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "calendar"
 
         createCalendar()
     }
-    
+
     func createCalendar() {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 30, height: 20)
@@ -30,11 +30,12 @@ class ViewController: UIViewController {
         calendarView.backgroundColor = UIColor.lightGray
         calendarView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         self.view.addSubview(calendarView)
-        
+
+        // AutoLayout を使うために
         calendarView.translatesAutoresizingMaskIntoConstraints = false
 
         self.view.addConstraints([
-        
+
             NSLayoutConstraint(item: calendarView,
                                attribute: .top,
                                relatedBy: .equal,
@@ -50,7 +51,7 @@ class ViewController: UIViewController {
                                attribute: .width,
                                multiplier: 1.0,
                                constant: 0),
-            
+
             NSLayoutConstraint(item: calendarView,
                                attribute: .bottom,
                                relatedBy: .equal,
@@ -58,9 +59,8 @@ class ViewController: UIViewController {
                                attribute: .bottom,
                                multiplier: 1.0,
                                constant: 0),
-            
         ]);
-        
+
         calendarView.dataSource = self
         calendarView.delegate   = self
     }
@@ -72,13 +72,19 @@ class ViewController: UIViewController {
 }
 
 
+// MARK: Datasource
 extension ViewController: UICollectionViewDataSource {
+    // セクション内のセル数を返す
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        if section == 0 {
+            return 7
+        } else {
+            return 30 // TODO: ここは月ごとに帰る必要あり
+        }
     }
-
+    // セクション数を返す。曜日表示部と日表示部は別セクションにしてみる。
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return 2
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,7 +94,9 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: Delegate
 extension ViewController: UICollectionViewDelegateFlowLayout {
+    // セルのサイズを返す
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 30, height: 30)
     }
