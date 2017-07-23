@@ -21,9 +21,6 @@ class ViewController: UIViewController {
 
     func createCalendar() {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 30, height: 20)
-        layout.sectionInset = UIEdgeInsetsMake(0,0,0,0)
-        layout.minimumLineSpacing = 30
 
         calendarView = UICollectionView(frame: self.view.frame,
                                         collectionViewLayout: layout)
@@ -79,7 +76,7 @@ extension ViewController: UICollectionViewDataSource {
         if section == 0 {
             return 7
         } else {
-            return 30 // TODO: ここは月ごとに帰る必要あり
+            return 14 // TODO: ここは月ごとに帰る必要あり
         }
     }
     // セクション数を返す。曜日表示部と日表示部は別セクションにしてみる。
@@ -90,6 +87,7 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = UIColor.white
+
         return cell
     }
 }
@@ -98,6 +96,29 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegateFlowLayout {
     // セルのサイズを返す
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 30, height: 30)
+        let width = (self.view.frame.width - 2.0 * 8)/7
+        let height = width * 3/2
+        return CGSize(width: width, height: height)
+    }
+
+    // セクション毎の縦のアイテムとのスペース
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 2.0
+    }
+    // セクション毎の横のアイテムとのスペース
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 2.0
+    }
+    // アイテムの周囲のマージンは、なし
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(0,0,0,0)
+    }
+    // フッターのサイズ
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: self.view.frame.width, height: 5)
+    }
+    // ヘッダーのサイズ
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: 0, height: 0)
     }
 }
