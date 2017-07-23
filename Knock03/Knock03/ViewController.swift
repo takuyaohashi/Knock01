@@ -25,7 +25,8 @@ class ViewController: UIViewController {
         calendarView = UICollectionView(frame: self.view.frame,
                                         collectionViewLayout: layout)
         calendarView.backgroundColor = UIColor.lightGray
-        calendarView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        calendarView.register(CalendarWeekCell.self, forCellWithReuseIdentifier: "weekCell")
+        calendarView.register(CalendarDayCell.self, forCellWithReuseIdentifier: "dayCell")
         self.view.addSubview(calendarView)
 
         // AutoLayout を使うために
@@ -85,10 +86,15 @@ extension ViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = UIColor.white
-
-        return cell
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weekCell", for: indexPath) as!   CalendarWeekCell
+            cell.backgroundColor = UIColor.red
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as!   CalendarDayCell
+            cell.backgroundColor = UIColor.white
+            return cell
+        }
     }
 }
 

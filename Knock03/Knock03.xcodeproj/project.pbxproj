@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B03369151F24BF0500E22246 /* CalendarWeekCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03369141F24BF0500E22246 /* CalendarWeekCell.swift */; };
+		B03369171F24BFD900E22246 /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03369161F24BFD900E22246 /* CalendarDayCell.swift */; };
 		B08734711F150CB500C61AFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08734701F150CB500C61AFB /* AppDelegate.swift */; };
 		B08734731F150CB500C61AFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08734721F150CB500C61AFB /* ViewController.swift */; };
 		B08734781F150CB500C61AFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B08734771F150CB500C61AFB /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B03369141F24BF0500E22246 /* CalendarWeekCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarWeekCell.swift; path = Cells/CalendarWeekCell.swift; sourceTree = "<group>"; };
+		B03369161F24BFD900E22246 /* CalendarDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarDayCell.swift; path = Cells/CalendarDayCell.swift; sourceTree = "<group>"; };
 		B087346D1F150CB500C61AFB /* Knock03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Knock03.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B08734701F150CB500C61AFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B08734721F150CB500C61AFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B03369131F24BEA000E22246 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B03369141F24BF0500E22246 /* CalendarWeekCell.swift */,
+				B03369161F24BFD900E22246 /* CalendarDayCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		B08734641F150CB400C61AFB = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +67,7 @@
 		B087346F1F150CB500C61AFB /* Knock03 */ = {
 			isa = PBXGroup;
 			children = (
+				B03369131F24BEA000E22246 /* Cells */,
 				B08734701F150CB500C61AFB /* AppDelegate.swift */,
 				B08734721F150CB500C61AFB /* ViewController.swift */,
 				B08734771F150CB500C61AFB /* Assets.xcassets */,
@@ -138,6 +152,8 @@
 				B08734731F150CB500C61AFB /* ViewController.swift in Sources */,
 				B08734831F1B2D9E00C61AFB /* CalendarDateCell.swift in Sources */,
 				B08734711F150CB500C61AFB /* AppDelegate.swift in Sources */,
+				B03369151F24BF0500E22246 /* CalendarWeekCell.swift in Sources */,
+				B03369171F24BFD900E22246 /* CalendarDayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +309,7 @@
 				B08734811F150CB500C61AFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
