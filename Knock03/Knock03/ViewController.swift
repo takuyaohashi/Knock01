@@ -97,7 +97,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     // セルのサイズを返す
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (self.view.frame.width - 2.0 * 8)/7
-        let height = width * 3/2
+        // section:0 は曜日を表示する箇所なのでサイズを小さくする
+        let height = indexPath.section == 0 ? width / 2 : width * 3/2
         return CGSize(width: width, height: height)
     }
 
