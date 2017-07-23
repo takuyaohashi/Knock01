@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
         calendarView = UICollectionView(frame: self.view.frame,
                                         collectionViewLayout: layout)
-        calendarView.backgroundColor = UIColor.lightGray
+        calendarView.backgroundColor = UIColor.white
         calendarView.register(CalendarWeekCell.self, forCellWithReuseIdentifier: "weekCell")
         calendarView.register(CalendarDayCell.self, forCellWithReuseIdentifier: "dayCell")
         self.view.addSubview(calendarView)
@@ -88,11 +88,11 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weekCell", for: indexPath) as!   CalendarWeekCell
-            cell.backgroundColor = UIColor.red
+            cell.backgroundColor = UIColor.lightGreen
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as!   CalendarDayCell
-            cell.backgroundColor = UIColor.white
+            cell.backgroundColor = UIColor.lightYellow
             return cell
         }
     }
