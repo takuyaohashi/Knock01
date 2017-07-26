@@ -89,6 +89,7 @@ extension ViewController: UICollectionViewDataSource {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weekCell", for: indexPath) as!   CalendarWeekCell
             cell.backgroundColor = UIColor.lightGreen
+            cell.setWeekDay(at: indexPath[1])
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as!   CalendarDayCell
