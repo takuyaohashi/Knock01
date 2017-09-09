@@ -10,7 +10,7 @@ import Foundation
 
 class DateManager {
     let cal = Calendar(identifier: .japanese)
-
+    
     static var today : String {
         let now = Date()
         let formatter = DateFormatter()
@@ -22,5 +22,9 @@ class DateManager {
     func firstDayOfMonth() -> Date? {
         let components = cal.dateComponents([.year, .month], from: Date())
         return cal.date(from: components)
+    }
+
+    func numOfWeek(_ date: Date) {
+        return range(of: .weekOfMonth, in: .month, for: date)?.count
     }
 }
