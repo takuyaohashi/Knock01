@@ -14,7 +14,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "calendar"
+        navigationItem.title = DateManager.today
 
         createCalendar()
     }
