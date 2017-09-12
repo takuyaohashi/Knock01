@@ -10,7 +10,7 @@ import Foundation
 
 class DateManager {
     let cal = Calendar(identifier: .japanese)
-    
+    static let daysPerWeek = 7
     static var today : String {
         let now = Date()
         let formatter = DateFormatter()
@@ -24,7 +24,7 @@ class DateManager {
         return cal.date(from: components)
     }
 
-    func numOfWeek(_ date: Date) {
-        return range(of: .weekOfMonth, in: .month, for: date)?.count
+    func numOfWeek(_ date: Date) -> Int {
+        return cal.range(of: .weekOfMonth, in: .month, for: date)!.count
     }
 }
