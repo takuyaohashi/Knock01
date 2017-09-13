@@ -27,4 +27,14 @@ class DateManager {
     func numOfWeek(_ date: Date) -> Int {
         return cal.range(of: .weekOfMonth, in: .month, for: date)!.count
     }
+
+    func dateForCell(byIndex idx: IndexPath) -> String {
+        let firstDay = cal.ordinality(of: .day, in: .weekOfMonth, for: firstDayOfMonth()!)
+        var comp = DateComponents()
+        comp.day = idx.row - firstDay! + 1
+        let da = cal.date(byAdding: comp, to: firstDayOfMonth()!)!
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d"
+        return formatter.string(from: da)
+    }
 }

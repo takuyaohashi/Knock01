@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var calendarView : UICollectionView!
+    let mng = DateManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +78,7 @@ extension ViewController: UICollectionViewDataSource {
         if section == 0 {
             return 7
         } else {
-            return 14 // TODO: ここは月ごとに帰る必要あり
+            return mng.numOfWeek(Date()) * DateManager.daysPerWeek
         }
     }
     // セクション数を返す。曜日表示部と日表示部は別セクションにしてみる。
@@ -94,6 +95,7 @@ extension ViewController: UICollectionViewDataSource {
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as!   CalendarDayCell
             cell.backgroundColor = UIColor.lightYellow
+            cell.day.text = mng.dateForCell(byIndex: indexPath)
             return cell
         }
     }
