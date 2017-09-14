@@ -94,8 +94,15 @@ extension ViewController: UICollectionViewDataSource {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayCell", for: indexPath) as!   CalendarDayCell
-            cell.backgroundColor = UIColor.lightYellow
-            cell.day.text = mng.dateForCell(byIndex: indexPath)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "d"
+            let date = mng.dateForCell(byIndex: indexPath)
+            cell.day.text = formatter.string(from: date)
+            if mng.isToday(date: date) {
+                cell.backgroundColor = .lightBlue
+            } else {
+                cell.backgroundColor = .lightYellow
+            }
             return cell
         }
     }

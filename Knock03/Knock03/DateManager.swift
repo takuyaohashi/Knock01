@@ -28,13 +28,15 @@ class DateManager {
         return cal.range(of: .weekOfMonth, in: .month, for: date)!.count
     }
 
-    func dateForCell(byIndex idx: IndexPath) -> String {
+    func dateForCell(byIndex idx: IndexPath) -> Date {
         let firstDay = cal.ordinality(of: .day, in: .weekOfMonth, for: firstDayOfMonth()!)
         var comp = DateComponents()
         comp.day = idx.row - firstDay! + 1
-        let da = cal.date(byAdding: comp, to: firstDayOfMonth()!)!
-        let formatter = DateFormatter()
-        formatter.dateFormat = "d"
-        return formatter.string(from: da)
+        return cal.date(byAdding: comp, to: firstDayOfMonth()!)!
+    }
+
+    func isToday(date: Date) -> Bool {
+        let startOfDay = cal.startOfDay(for: Date())
+        return date == startOfDay
     }
 }
