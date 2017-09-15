@@ -5,6 +5,8 @@ iOS アプリN本ノック 3本目
 ## 内容
 カレンダーを作成
 
-## 使う技術
-UICollectionView
+## 身につけたい技術
 
+* UICollectionView
+* Calendar
+* Date
