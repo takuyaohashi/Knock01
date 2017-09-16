@@ -34,7 +34,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KoH-Qn-f2U">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CutomCell" id="KoH-Qn-f2U" customClass="CustomCell" customModule="Knock04" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="117" height="106"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -53,6 +53,9 @@
                                             <constraint firstItem="GHl-d4-hoD" firstAttribute="centerX" secondItem="KoH-Qn-f2U" secondAttribute="centerX" id="VTq-7v-t1f"/>
                                             <constraint firstItem="GHl-d4-hoD" firstAttribute="centerY" secondItem="KoH-Qn-f2U" secondAttribute="centerY" id="yFA-ua-hnl"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="GHl-d4-hoD" id="dwf-d1-GTH"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
