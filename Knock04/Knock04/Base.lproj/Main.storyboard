@@ -152,6 +152,9 @@
                             <constraint firstItem="KDV-F9-Yas" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="H30-mO-5Tl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calendarView" destination="2lc-hl-8sJ" id="70z-nJ-ZmT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
