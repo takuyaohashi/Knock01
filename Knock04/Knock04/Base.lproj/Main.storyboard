@@ -130,6 +130,7 @@
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="dateLabel" destination="GHl-d4-hoD" id="dwf-d1-GTH"/>
+                                                    <outlet property="selectedLabel" destination="kTa-7J-hOw" id="xBz-WP-jcV"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>

@@ -46,4 +46,9 @@ extension ViewController: JTAppleCalendarViewDelegate {
         cell.dateLabel.text = cellState.text
         return cell
     }
+
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        guard let validCell = cell as? CustomCell else { return }
+        validCell.selectedLabel.isHidden = false
+    }
 }
