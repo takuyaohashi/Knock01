@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         calendarView.minimumInteritemSpacing = 0
     }
 
-    func handleCellTextColr(view: JTAppleCell?, cellState: CellState) {
+    func handleCellSelected(view: JTAppleCell?, cellState: CellState) {
         guard let validCell = view as? CustomCell else { return }
 
         if validCell.isSelected {
@@ -67,16 +67,16 @@ extension ViewController: JTAppleCalendarViewDelegate {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CutomCell", for: indexPath) as! CustomCell
         cell.dateLabel.text = cellState.text
 
-        handleCellTextColr(view: cell, cellState: cellState)
+        handleCellSelected(view: cell, cellState: cellState)
 
         return cell
     }
 
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        handleCellTextColr(view: cell, cellState: cellState)
+        handleCellSelected(view: cell, cellState: cellState)
     }
 
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        handleCellTextColr(view: cell, cellState: cellState)
+        handleCellSelected(view: cell, cellState: cellState)
     }
 }
