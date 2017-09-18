@@ -51,6 +51,12 @@ extension ViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CutomCell", for: indexPath) as! CustomCell
         cell.dateLabel.text = cellState.text
+
+        if cell.isSelected {
+            cell.selectedLabel.isHidden = false
+        } else {
+            cell.selectedLabel.isHidden = true
+        }
         return cell
     }
 
