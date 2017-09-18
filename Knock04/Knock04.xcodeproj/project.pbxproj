@@ -14,6 +14,7 @@
 		B0C187D91F6D03BD00503ABA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C187D81F6D03BD00503ABA /* Assets.xcassets */; };
 		B0C187DC1F6D03BD00503ABA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C187DA1F6D03BD00503ABA /* LaunchScreen.storyboard */; };
 		B0C187E61F6D646C00503ABA /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C187E51F6D646C00503ABA /* CustomCell.swift */; };
+		B0C187E81F6FC3ED00503ABA /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C187E71F6FC3ED00503ABA /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B0C187DB1F6D03BD00503ABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0C187DD1F6D03BD00503ABA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C187E51F6D646C00503ABA /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		B0C187E71F6FC3ED00503ABA /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				B0C187DA1F6D03BD00503ABA /* LaunchScreen.storyboard */,
 				B0C187DD1F6D03BD00503ABA /* Info.plist */,
 				B0C187E51F6D646C00503ABA /* CustomCell.swift */,
+				B0C187E71F6FC3ED00503ABA /* ColorExtension.swift */,
 			);
 			path = Knock04;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				B0C187D41F6D03BD00503ABA /* ViewController.swift in Sources */,
 				B0C187E61F6D646C00503ABA /* CustomCell.swift in Sources */,
 				B0C187D21F6D03BD00503ABA /* AppDelegate.swift in Sources */,
+				B0C187E81F6FC3ED00503ABA /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
