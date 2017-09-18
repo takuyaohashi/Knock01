@@ -58,4 +58,9 @@ extension ViewController: JTAppleCalendarViewDelegate {
         guard let validCell = cell as? CustomCell else { return }
         validCell.selectedLabel.isHidden = false
     }
+
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        guard let validCell = cell as? CustomCell else { return }
+        validCell.selectedLabel.isHidden = true
+    }
 }
