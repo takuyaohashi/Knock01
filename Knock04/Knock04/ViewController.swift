@@ -29,6 +29,20 @@ class ViewController: UIViewController {
         calendarView.minimumInteritemSpacing = 0
     }
 
+    func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
+        guard let validCell = view as? CustomCell else { return }
+
+        if validCell.isSelected {
+            validCell.dateLabel.textColor = selectedMonthColor
+        } else {
+            if cellState.dateBelongsTo == .thisMonth {
+                validCell.dateLabel.textColor = monthColor
+            } else {
+                validCell.dateLabel.textColor = outsideMonthColor
+            }
+        }
+    }
+
     func handleCellSelected(view: JTAppleCell?, cellState: CellState) {
         guard let validCell = view as? CustomCell else { return }
 
@@ -68,15 +82,17 @@ extension ViewController: JTAppleCalendarViewDelegate {
         cell.dateLabel.text = cellState.text
 
         handleCellSelected(view: cell, cellState: cellState)
-
+        handleCellTextColor(view: cell, cellState: cellState)
         return cell
     }
 
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellSelected(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
     }
 
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellSelected(view: cell, cellState: cellState)
+        handleCellTextColor(view: cell, cellState: cellState)
     }
 }
