@@ -176,6 +176,8 @@
                     </view>
                     <connections>
                         <outlet property="calendarView" destination="2lc-hl-8sJ" id="70z-nJ-ZmT"/>
+                        <outlet property="month" destination="Bnq-hv-aF8" id="4Da-OH-CeE"/>
+                        <outlet property="year" destination="tOs-U7-v6g" id="kkr-uG-0cN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
