@@ -11,6 +11,11 @@ import JTAppleCalendar
 
 class ViewController: UIViewController {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
+    
+    let outsideMonthColor = UIColor(colorWithHexValue: 0x584a66)
+    let monthColor = UIColor.white
+    let selectedMonthColor = UIColor(colorWithHexValue: 0x3a294b)
+    let currentDateSelectedViewColor = UIColor(colorWithHexValue: 0x4e3f5d)
     let formatter = DateFormatter()
 
     override func viewDidLoad() {
