@@ -18,3 +18,4 @@ profile
 *.moved-aside
 .DS_Store
 Pods
+GoogleService-Info.plist
