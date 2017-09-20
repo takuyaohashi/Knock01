@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0C161531F72AA070085B3E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C161521F72A8380085B3E5 /* GoogleService-Info.plist */; };
 		B0C187F61F714D8B00503ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C187F51F714D8B00503ABA /* AppDelegate.swift */; };
 		B0C187F81F714D8B00503ABA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C187F71F714D8B00503ABA /* ViewController.swift */; };
 		B0C187FB1F714D8B00503ABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C187F91F714D8B00503ABA /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 		5B466D565143A8E711427236 /* Pods-Knock05.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Knock05.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Knock05/Pods-Knock05.debug.xcconfig"; sourceTree = "<group>"; };
 		63AF46B4FC950540B2DAA674 /* Pods-Knock05.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Knock05.release.xcconfig"; path = "Pods/Target Support Files/Pods-Knock05/Pods-Knock05.release.xcconfig"; sourceTree = "<group>"; };
 		A2C5FD32DD68F460E970F2FD /* Pods_Knock05.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Knock05.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0C161521F72A8380085B3E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0C187F21F714D8B00503ABA /* Knock05.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Knock05.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C187F51F714D8B00503ABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0C187F71F714D8B00503ABA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				B0C187FC1F714D8B00503ABA /* Assets.xcassets */,
 				B0C187FE1F714D8B00503ABA /* LaunchScreen.storyboard */,
 				B0C188011F714D8B00503ABA /* Info.plist */,
+				B0C161521F72A8380085B3E5 /* GoogleService-Info.plist */,
 			);
 			path = Knock05;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0C188001F714D8B00503ABA /* LaunchScreen.storyboard in Resources */,
+				B0C161531F72AA070085B3E5 /* GoogleService-Info.plist in Resources */,
 				B0C187FD1F714D8B00503ABA /* Assets.xcassets in Resources */,
 				B0C187FB1F714D8B00503ABA /* Main.storyboard in Resources */,
 			);
@@ -388,6 +392,7 @@
 				B0C188061F714D8B00503ABA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
