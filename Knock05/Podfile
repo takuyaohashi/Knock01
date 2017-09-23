@@ -9,5 +9,6 @@ target 'Knock05' do
   # Pods for Knock05
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
   pod 'Firebase/Database'
 end
