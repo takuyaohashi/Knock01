@@ -9,7 +9,8 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    var email: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

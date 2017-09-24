@@ -27,9 +27,16 @@ class ViewController: UIViewController {
                 if let validText = text, !validText.isEmpty {
                     print("email is valid")
                 } else {
-                    self.performSegue(withIdentifier: "registerViewController",sender: nil)
+                    self.performSegue(withIdentifier: "registerViewController",sender: email)
                 }
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "registerViewController") {
+            let rvc = segue.destination as! RegisterViewController
+            rvc.email = sender as! String
         }
     }
 
