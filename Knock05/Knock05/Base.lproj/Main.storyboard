@@ -60,10 +60,29 @@
                     </view>
                     <connections>
                         <outlet property="emailText" destination="O0M-jV-Ed3" id="U7I-Q7-jNc"/>
+                        <segue destination="LXf-J9-khh" kind="presentation" identifier="registerViewController" id="cea-7u-rKZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="XaH-bo-nq4">
+            <objects>
+                <viewController id="LXf-J9-khh" customClass="RegisterViewController" customModule="Knock05" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wEd-BW-I1T"/>
+                        <viewControllerLayoutGuide type="bottom" id="to3-Q2-8Yt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Fg-5T-p33">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qDS-6d-Cja" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826" y="33"/>
         </scene>
     </scenes>
 </document>

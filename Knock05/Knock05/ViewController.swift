@@ -26,6 +26,8 @@ class ViewController: UIViewController {
             } else {
                 if let validText = text, !validText.isEmpty {
                     print("email is valid")
+                } else {
+                    self.performSegue(withIdentifier: "registerViewController",sender: nil)
                 }
             }
         }
