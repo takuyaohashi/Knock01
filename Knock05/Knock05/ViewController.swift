@@ -7,19 +7,33 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
+    @IBOutlet var emailText: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    @IBAction func submitEmail(sender:UIButton) {
+        guard let email = emailText.text, !email.isEmpty else {
+            return
+        }
+        Auth.auth().fetchProviders(forEmail: email) { text, error in
+            if let validError = error {
+                print("\(validError.localizedDescription)")
+            } else {
+                if let validText = text, !validText.isEmpty {
+                    print("email is valid")
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 

@@ -40,6 +40,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adB-Cq-LQ2">
                                         <rect key="frame" x="155.5" y="50.5" width="32" height="30"/>
                                         <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="submitEmailWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="msL-w1-SnM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -55,6 +58,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="4FS-ny-Egy" secondAttribute="trailing" id="ncu-MK-ncL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailText" destination="O0M-jV-Ed3" id="U7I-Q7-jNc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
