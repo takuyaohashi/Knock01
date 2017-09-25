@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B0C161531F72AA070085B3E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0C161521F72A8380085B3E5 /* GoogleService-Info.plist */; };
 		B0C161551F778D8F0085B3E5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C161541F778D8F0085B3E5 /* RegisterViewController.swift */; };
+		B0C161571F7946D60085B3E5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C161561F7946D60085B3E5 /* Constant.swift */; };
 		B0C187F61F714D8B00503ABA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C187F51F714D8B00503ABA /* AppDelegate.swift */; };
 		B0C187F81F714D8B00503ABA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C187F71F714D8B00503ABA /* ViewController.swift */; };
 		B0C187FB1F714D8B00503ABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0C187F91F714D8B00503ABA /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		A2C5FD32DD68F460E970F2FD /* Pods_Knock05.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Knock05.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C161521F72A8380085B3E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0C161541F778D8F0085B3E5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B0C161561F7946D60085B3E5 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		B0C187F21F714D8B00503ABA /* Knock05.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Knock05.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C187F51F714D8B00503ABA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0C187F71F714D8B00503ABA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			children = (
 				B0C187F51F714D8B00503ABA /* AppDelegate.swift */,
 				B0C187F71F714D8B00503ABA /* ViewController.swift */,
+				B0C161561F7946D60085B3E5 /* Constant.swift */,
 				B0C187F91F714D8B00503ABA /* Main.storyboard */,
 				B0C187FC1F714D8B00503ABA /* Assets.xcassets */,
 				B0C187FE1F714D8B00503ABA /* LaunchScreen.storyboard */,
@@ -236,6 +239,7 @@
 				B0C161551F778D8F0085B3E5 /* RegisterViewController.swift in Sources */,
 				B0C187F81F714D8B00503ABA /* ViewController.swift in Sources */,
 				B0C187F61F714D8B00503ABA /* AppDelegate.swift in Sources */,
+				B0C161571F7946D60085B3E5 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
