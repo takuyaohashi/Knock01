@@ -57,6 +57,24 @@ extension ViewController: GADBannerViewDelegate {
         bannerView.load(GADRequest())
         bannerView.delegate = self
         view.addSubview(bannerView)
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+
+        self.view.addConstraints([
+            NSLayoutConstraint(item: bannerView,
+                               attribute: .bottom,
+                               relatedBy: .equal,
+                               toItem: self.view,
+                               attribute: .bottom,
+                               multiplier: 1.0,
+                               constant: 0),
+            NSLayoutConstraint(item: bannerView,
+                               attribute: .centerX,
+                               relatedBy: .equal,
+                               toItem: view,
+                               attribute: .centerX,
+                               multiplier: 1.0,
+                               constant: 0),
+        ])
     }
 
     /// Tells the delegate an ad request loaded an ad.
