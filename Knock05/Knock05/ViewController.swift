@@ -16,12 +16,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
-        self.view.addSubview(bannerView)
-        bannerView.adUnitID = unitId
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
+        setupAd()
     }
 
     @IBAction func submitEmail(sender:UIButton) {
@@ -40,7 +35,7 @@ class ViewController: UIViewController {
             }
         }
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "registerViewController") {
             let rvc = segue.destination as! RegisterViewController
@@ -55,9 +50,21 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: GADBannerViewDelegate {
+    private func setupAd() {
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = unitId
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
+        view.addSubview(bannerView)
+    }
+
     /// Tells the delegate an ad request loaded an ad.
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        view.addSubview(bannerView)
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+        })
         print("adViewDidReceiveAd")
     }
 
