@@ -74,6 +74,7 @@
                     </view>
                     <connections>
                         <outlet property="emailText" destination="O0M-jV-Ed3" id="U7I-Q7-jNc"/>
+                        <outlet property="passwordText" destination="517-Fy-2fT" id="JIH-58-8Gk"/>
                         <segue destination="LXf-J9-khh" kind="presentation" identifier="registerViewController" id="cea-7u-rKZ"/>
                     </connections>
                 </viewController>
