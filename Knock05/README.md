@@ -3,7 +3,10 @@
 iOS アプリN本ノック 5本目
 
 ## 内容
-Firabase を用いたソーシャルログイン
+Firabase を使って色々やってみる
+
+* Email Login
+* AdMob
 
 ## 身につけたい技術
 

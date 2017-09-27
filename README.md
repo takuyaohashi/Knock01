@@ -9,4 +9,4 @@ iOS アプリを作る上で必要な勉強を行うためのリポジトリ
 * [2本目 TODO アプリ(story board なし)](https://github.com/takuyaohashi/Knock_iOS_app/tree/master/Knock02)
 * [3本目 カレンダーアプリ](https://github.com/takuyaohashi/Knock_iOS_app/tree/master/Knock03)
 * [4本目 カレンダーアプリ2](https://github.com/takuyaohashi/Knock_iOS_app/tree/master/Knock04)
-* [5本目 Firebase でソーシャル認証](https://github.com/takuyaohashi/Knock_iOS_app/tree/master/Knock05)
+* [5本目 Firebase を使ってみる](https://github.com/takuyaohashi/Knock_iOS_app/tree/master/Knock05)
