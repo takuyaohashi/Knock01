@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4FS-ny-Egy">
-                                <rect key="frame" x="16" y="220" width="343" height="80.5"/>
+                                <rect key="frame" x="16" y="220" width="343" height="131"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aby-98-Qvu">
                                         <rect key="frame" x="151" y="0.0" width="41" height="20.5"/>
@@ -31,14 +31,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O0M-jV-Ed3">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O0M-jV-Ed3">
                                         <rect key="frame" x="0.0" y="20.5" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9X-yE-0hM">
+                                        <rect key="frame" x="134.5" y="50.5" width="74" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="517-Fy-2fT">
+                                        <rect key="frame" x="0.0" y="71" width="343" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adB-Cq-LQ2">
-                                        <rect key="frame" x="155.5" y="50.5" width="32" height="30"/>
+                                        <rect key="frame" x="155.5" y="101" width="32" height="30"/>
                                         <state key="normal" title="Next"/>
                                         <connections>
                                             <action selector="submitEmailWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="msL-w1-SnM"/>
@@ -46,7 +58,9 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="517-Fy-2fT" firstAttribute="leading" secondItem="4FS-ny-Egy" secondAttribute="leading" id="QLq-dp-CvJ"/>
                                     <constraint firstItem="O0M-jV-Ed3" firstAttribute="leading" secondItem="4FS-ny-Egy" secondAttribute="leading" id="Yc4-47-xyh"/>
+                                    <constraint firstAttribute="trailing" secondItem="517-Fy-2fT" secondAttribute="trailing" id="cQ3-A8-dNp"/>
                                     <constraint firstAttribute="trailing" secondItem="O0M-jV-Ed3" secondAttribute="trailing" id="qhl-jc-0YY"/>
                                 </constraints>
                             </stackView>
