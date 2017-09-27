@@ -22,18 +22,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func submitEmail(sender:UIButton) {
-        guard let email = emailText.text, !email.isEmpty else {
+        guard let email = emailText.text, !email.isEmpty,
+              let password = passwordText.text, !password.isEmpty else {
             return
         }
-        Auth.auth().fetchProviders(forEmail: email) { text, error in
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let validError = error {
                 print("\(validError.localizedDescription)")
             } else {
-                if let validText = text, !validText.isEmpty {
-                    print("email is valid")
-                } else {
-                    self.performSegue(withIdentifier: "registerViewController",sender: email)
-                }
+                print("login")
             }
         }
     }
