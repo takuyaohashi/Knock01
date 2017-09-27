@@ -57,7 +57,7 @@ class ViewController: UIViewController {
 
 extension ViewController: GADBannerViewDelegate {
     private func setupAd() {
-        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView = GADBannerView(adSize: kGADAdSizeFullBanner)
         bannerView.adUnitID = unitId
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
