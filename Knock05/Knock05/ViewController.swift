@@ -12,11 +12,13 @@ import GoogleMobileAds
 
 class ViewController: UIViewController {
     @IBOutlet var emailText: UITextField!
+    @IBOutlet var passwordText: UITextField!
     var bannerView: GADBannerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAd()
+        self.setupUI()
+        self.setupAd()
     }
 
     @IBAction func submitEmail(sender:UIButton) {
@@ -34,6 +36,10 @@ class ViewController: UIViewController {
                 }
             }
         }
+    }
+
+    private func setupUI() {
+        passwordText.isSecureTextEntry = true
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
