@@ -30,20 +30,13 @@ class ViewController: UIViewController {
             if let validError = error {
                 print("\(validError.localizedDescription)")
             } else {
-                print("login")
+                self.performSegue(withIdentifier: "successLogin",sender: nil)
             }
         }
     }
 
     private func setupUI() {
         passwordText.isSecureTextEntry = true
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "registerViewController") {
-            let rvc = segue.destination as! RegisterViewController
-            rvc.email = sender as! String
-        }
     }
 
     override func didReceiveMemoryWarning() {

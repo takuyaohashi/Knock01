@@ -75,16 +75,16 @@
                     <connections>
                         <outlet property="emailText" destination="O0M-jV-Ed3" id="U7I-Q7-jNc"/>
                         <outlet property="passwordText" destination="517-Fy-2fT" id="JIH-58-8Gk"/>
-                        <segue destination="LXf-J9-khh" kind="presentation" identifier="registerViewController" id="cea-7u-rKZ"/>
+                        <segue destination="LXf-J9-khh" kind="presentation" identifier="successLogin" id="40k-oT-SPm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Register View Controller-->
+        <!--Success View Controller-->
         <scene sceneID="XaH-bo-nq4">
             <objects>
-                <viewController id="LXf-J9-khh" customClass="RegisterViewController" customModule="Knock05" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LXf-J9-khh" customClass="SuccessViewController" customModule="Knock05" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wEd-BW-I1T"/>
                         <viewControllerLayoutGuide type="bottom" id="to3-Q2-8Yt"/>
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qDS-6d-Cja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="826" y="33"/>
+            <point key="canvasLocation" x="1455" y="33"/>
         </scene>
     </scenes>
 </document>

@@ -1,5 +1,5 @@
 //
-//  RegisterViewController.swift
+//  SuccessViewController.swift
 //  Knock05
 //
 //  Created by Takuya OHASHI on 2017/09/24.
@@ -8,9 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
-    var email: String!
-    
+class SuccessViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
