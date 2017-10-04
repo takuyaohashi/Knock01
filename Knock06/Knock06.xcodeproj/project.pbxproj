@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D825C7EBEFD16EBDFE1229A /* Pods_Knock06.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93F7CE90A56E567C733DD72 /* Pods_Knock06.framework */; };
 		B02D4FE71F850C7B0028C4FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02D4FE61F850C7B0028C4FA /* AppDelegate.swift */; };
 		B02D4FE91F850C7B0028C4FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02D4FE81F850C7B0028C4FA /* ViewController.swift */; };
 		B02D4FEC1F850C7B0028C4FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B02D4FEA1F850C7B0028C4FA /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		85FE3CDFF9DA257A60B9EC6F /* Pods-Knock06.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Knock06.release.xcconfig"; path = "Pods/Target Support Files/Pods-Knock06/Pods-Knock06.release.xcconfig"; sourceTree = "<group>"; };
+		A2C30ABAE2A68E5328A6F877 /* Pods-Knock06.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Knock06.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Knock06/Pods-Knock06.debug.xcconfig"; sourceTree = "<group>"; };
 		B02D4FE31F850C7B0028C4FA /* Knock06.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Knock06.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02D4FE61F850C7B0028C4FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B02D4FE81F850C7B0028C4FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		B02D4FED1F850C7B0028C4FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B02D4FF01F850C7B0028C4FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B02D4FF21F850C7B0028C4FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D93F7CE90A56E567C733DD72 /* Pods_Knock06.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Knock06.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D825C7EBEFD16EBDFE1229A /* Pods_Knock06.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF074B1392F5D37D8EBCBB8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A2C30ABAE2A68E5328A6F877 /* Pods-Knock06.debug.xcconfig */,
+				85FE3CDFF9DA257A60B9EC6F /* Pods-Knock06.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B02D4FDA1F850C7B0028C4FA = {
 			isa = PBXGroup;
 			children = (
 				B02D4FE51F850C7B0028C4FA /* Knock06 */,
 				B02D4FE41F850C7B0028C4FA /* Products */,
+				AF074B1392F5D37D8EBCBB8D /* Pods */,
+				C208B80326B1AF773CD54F0E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = Knock06;
 			sourceTree = "<group>";
 		};
+		C208B80326B1AF773CD54F0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D93F7CE90A56E567C733DD72 /* Pods_Knock06.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B02D4FF51F850C7B0028C4FA /* Build configuration list for PBXNativeTarget "Knock06" */;
 			buildPhases = (
+				63ED2D6247DAB64F48D43313 /* [CP] Check Pods Manifest.lock */,
 				B02D4FDF1F850C7B0028C4FA /* Sources */,
 				B02D4FE01F850C7B0028C4FA /* Frameworks */,
 				B02D4FE11F850C7B0028C4FA /* Resources */,
+				D7E08EDCE4D8A54E259905E0 /* [CP] Embed Pods Frameworks */,
+				0A021D7B4CA3DC8D635338BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A021D7B4CA3DC8D635338BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Knock06/Pods-Knock06-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63ED2D6247DAB64F48D43313 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Knock06-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7E08EDCE4D8A54E259905E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Knock06/Pods-Knock06-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NCMB/NCMB.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NCMB.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Knock06/Pods-Knock06-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B02D4FDF1F850C7B0028C4FA /* Sources */ = {
@@ -272,6 +353,7 @@
 		};
 		B02D4FF61F850C7B0028C4FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2C30ABAE2A68E5328A6F877 /* Pods-Knock06.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +368,7 @@
 		};
 		B02D4FF71F850C7B0028C4FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85FE3CDFF9DA257A60B9EC6F /* Pods-Knock06.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
