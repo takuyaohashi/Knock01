@@ -8,5 +8,5 @@
 
 import Foundation
 
-let applicationId = "YOUR APPLICATION ID"
-let unitId = "YOUT Ad UNIT ID"
+let applicationId = "ca-app-pub-4407564639152644~8281003562"
+let unitId = "ca-app-pub-4407564639152644/4130005568"
