@@ -66,6 +66,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailText" destination="gWR-Gl-CJQ" id="cd5-mk-oDS"/>
+                        <outlet property="passwordText" destination="haW-5X-keo" id="enj-7c-P5V"/>
+                        <outlet property="signupButton" destination="kAT-Qj-A8k" id="9Tf-e9-mBe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
